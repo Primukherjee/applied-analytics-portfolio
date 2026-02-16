@@ -31,10 +31,11 @@ I’m keeping the analysis intentionally simple and interpretable. I plan to inc
 - Exploring how engagement relates to turnover differently depending on performance or career stage.
 ## What This Can’t Tell Us/Limitations
 This is an exploratory analysis using cross-sectional and partially simulated data. Looking into patterns here means working with a snapshot of real information mixed, in some cases with made-up details. Though the numbers come from different sources, they help sketch out early observations without claiming full accuracy.
-
 That means:
 - I can’t make causal claims
   
 - Measures may be noisy or incomplete
   
 - Missing the real organizational context where such things happen
+## Analysis and Findings
+This project began as an attempt to understand how workforce data can be used to identify patterns behind employee turnover and translate those patterns into actionable insights. For this project, I worked with an employee attrition dataset to explore how different workplace factors might influence the likelihood of employees leaving an organization. I started by examining overall attrition rates and then explored how turnover varied across departments, overtime status, performance ratings, and tenure length. As the analysis progressed, I built visualizations to better understand how attrition probability shifted across groups. I found that employees working overtime had a significantly higher likelihood of leaving, and that the first few years at a company showed the highest turnover risk. I also compared whether high performers were still at risk under high workload conditions. To move beyond descriptive analysis, I built a logistic regression model to predict attrition using features such as age, income, job satisfaction, tenure, overtime status, work–life balance, and environment satisfaction. The model helped identify which variables had the strongest relationship with the likelihood of an employee leaving. Overtime emerged as the strongest positive predictor, while job satisfaction, environment satisfaction, and work–life balance were strong negative predictors, suggesting protective effects against turnover.
