@@ -17,7 +17,7 @@ Instead of focusing on a single predictor, I plan to focus on how the context sh
 Most of the time, turnover gets perceived as just a result or an outcome. An employee resigns, followed by some sort of reaction.
 Looking at it through a systems lens, things seem a little backward. When people leave at similar points in their careers, again and again, that pattern hints at deeper issues. Perhaps due to how tasks are set up, what gets praised, or how goals are shared within a company. Seeing each departure as just a personal choice hides the underlying trends. What seems like individual moves might actually reflect steady pressures built into the system. 
 
-From a business perspective, retention patterns influence cost stability, and long-term performance outcomes.
+This project is my attempt to look at turnover as a system-level signal rather than an individual failure. From a business perspective, retention patterns influence cost stability, and long-term performance outcomes.
 ## The Data
 I’m using a publicly available HR analytics dataset sourced from Kaggle that includes information on employee tenure, performance ratings, engagement indicators, department, and attrition status.
 I’m treating this data as illustrative rather than representative. What matters here is spotting trends that make sense alongside real workplace patterns about why employees leave organizations. If needed, I may also simulate small extensions of the data to test specific scenarios that aren’t fully captured in the original dataset.
