@@ -1,4 +1,4 @@
-# When High Performers Still Leave: A Systems View of Employee Turnover
+# When High Performers Still Leave: A Data-Driven View of Employee Turnover
 I was trained in psychology to treat outcomes as clues, not explanations, which is why employee turnover has always bothered me more than most workplace metrics. Yet in organizational settings, I see patterns breaking that rule. In spite of those hitting targets, meeting expectations and being praised by supervisors, some still choose to leave. 
 
 When employees quit while doing well, it raises questions. These moments point back to hidden pressures in the system. Stability does not always keep them around and the real cause hides earlier in the process. I didn’t start thinking about employee turnover because I love HR metrics. I started because the explanations always felt too neat. What leads someone to walk away?
