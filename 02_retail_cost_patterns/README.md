@@ -1,204 +1,94 @@
-TITLE: Hidden Revenue Dependency Patterns in Retail Data;
-
-What I’m Curious About;
-
-When we look at revenue, we usually look at totals. Growth. Maybe trends over time.
-
-But what if the structure underneath tells a different story?
-
-More specifically:
-
-Is revenue concentrated in just a few regions?
-
-Do a handful of customers carry most of the business?
-
-Are there signals of instability hidden in transaction patterns?
-
-What happens if one major customer disappears?
-
-This isn’t about predicting failure. It’s about noticing where systems might be fragile without realizing it.;
-
-Why This Matters to Me;
-
-In psychology, we’re trained to treat patterns as early warnings. If behavior starts clustering in strange ways, something underneath is shifting. Businesses aren’t that different.
-
-If most revenue comes from a small set of customers or locations, that creates quiet dependency. Everything looks stable. Until it isn’t.
-
-Lose one region. Lose one large client. Suddenly things change fast.
-
-I wanted to look at revenue not as a single number, but as a structure. Something with pressure points. Something that could bend.;
-
-The Data;
-
-For this project, I used a publicly available online retail dataset from Kaggle. It contains transaction-level information — product purchases, quantities, prices, timestamps, customer IDs, and country information.
-
-I’m treating it as illustrative, not definitive. It’s a snapshot of real purchasing behavior. That’s enough to study patterns.
-
-What matters here isn’t the specific company. It’s the structure that shows up when you step back and look at how revenue actually forms.;
-
-How I Approached the Analysis;
-
-I kept things simple and readable. No heavy modeling. No black boxes. Just patterns.
-
-I used Python and SQLite together to work with the data in a way that felt closer to real business workflows. Loaded the dataset. Queried it. Aggregated it. Looked at how revenue spreads across countries, customers, and time.
-
-Some of the things I explored:
-
-Revenue distribution across countries;
-Customer concentration — who generates most of the income;
-Average order value vs frequency of purchases;
-Monthly revenue movement over time;
-Signals of dependency where a small segment drives a large share of revenue;
-
-I wasn’t trying to build a prediction engine. I wanted to understand structure.;
-
-What Stood Out;
-
-A few things became obvious pretty quickly.
-
-Revenue wasn’t evenly distributed. Not even close.
-
-Certain countries dominated, with one region contributing a disproportionate share of total income.
-
-A small group of customers generated a large portion of revenue. Some bought frequently in smaller amounts. Others made fewer but much larger purchases. Different patterns, same impact.
-
-Monthly revenue wasn’t steady either. It rose and fell across time, showing that income flow isn’t constant.
-
-Taken together, it pointed toward concentration.
-
-If a business depends heavily on a few places or a few customers, that creates exposure. Not immediate danger. But structural vulnerability.;
-
-Why I Think This Kind of Analysis Matters;
-
-We talk a lot about growth. Revenue going up. Numbers looking good.
-
-But concentration matters too.
-
-If income comes from everywhere, that’s resilience.
-If it comes from just a few pockets, that’s exposure.
-
-This kind of analysis doesn’t give answers. It just points at pressure points.
-
-And sometimes that’s enough.;
-
-Key Takeaways;
-
-Revenue is heavily concentrated in a small number of countries;
-A limited group of customers generates a large share of total income;
-Some customers drive revenue through frequent purchases, others through high-value orders;
-Monthly revenue fluctuates, suggesting uneven demand over time;
-Business stability may depend more on structure than total revenue size;
-Looking at patterns beneath the totals reveals hidden dependencies;
-
-Limitations;
-
-This is exploratory work using one dataset. That means a few things:
-
-I can’t make causal claims;
-The business context is missing;
-Customer behavior here might not reflect other industries;
-Some fields have missing values;
-
-So I treat this as pattern-spotting, not truth-finding.
-
-The goal is to practice thinking in systems. Looking at data as something connected, not isolated.;
-
-Tools Used;
-
-Python (pandas, matplotlib);
-SQLite (query-driven analysis);
-Jupyter Notebook;
-
-What I Found / Interpretation
-
-Written in your voice. Bullet-pointed. Conversational. Based directly on the analysis you ran.
-
-What I Found
-
-Instead of looking at revenue as one big number, I tried to break it apart and see where it was actually coming from. A few patterns stood out almost immediately.
-
-Geographic concentration
-
-Revenue is heavily concentrated in a small number of countries.
-
-The United Kingdom alone contributes a disproportionately large share compared to the rest.
-
-After the top few countries, there’s a steep drop-off.
-
-This suggests the business isn’t evenly distributed globally — it leans heavily on certain regions.
-
-What that means:
-If demand drops in one major region, total revenue could take a noticeable hit. It’s not just about performance. It’s about exposure.
-
-Customer concentration
-
-A relatively small number of customers generate a large portion of the total revenue.
-
-Some customers show extremely high transaction counts, meaning they purchase frequently.
-
-Others buy rarely but place very large orders when they do.
-
-What that means:
-Revenue isn’t being driven equally by everyone. It’s coming from a core group. That creates dependency. If even a few of those customers leave, the impact could be significant.
-
-Frequency vs spending behavior
-
-Some top customers generate revenue through volume — lots of purchases over time.
-
-Others contribute through high-value orders despite fewer transactions.
-
-Both patterns matter, but they represent different types of customer relationships.
-
-What that means:
-Loyalty and purchasing power show up in different ways. One customer might be consistent. Another might be occasional but big. Losing either type would hurt, just in different ways.
-
-Revenue inequality
-
-When I calculated approximate total revenue, it became clear that income isn’t spread evenly across the dataset.
-
-A small segment appears to drive a large chunk of financial activity.
-
-This kind of imbalance is common in real-world businesses.
-
-What that means:
-The business may look stable on the surface, but structurally it’s leaning on a few strong pillars.
-
-Time-based trend
-
-Monthly revenue fluctuates rather than growing steadily.
-
-There are clear peaks and dips across the year.
-
-Some months show strong surges, followed by noticeable drops.
-
-What that means:
-Revenue flow isn’t consistent. It’s seasonal or event-driven. That kind of volatility can make planning harder.
-
-Returns signal (unexpected finding)
-
-After cleaning the data to remove negative quantities, return signals disappeared from the analysis.
-
-That suggests either:
-
-Returns were filtered out during cleaning, or
-
-Returns exist but are limited in this processed version.
-
-What that means:
-This part of the analysis became less informative than expected, but it still showed how preprocessing decisions can shape what we’re able to detect.
-
-Bigger Picture Insight
-
-Taken together, the patterns point toward structural concentration.
-
-Revenue seems to depend heavily on:
-
-A few countries
-
-A few high-value customers
-
-Specific time periods
-
-None of this is inherently bad. But it does mean the system might be sensitive to change. If one major segment weakens, the effect could ripple through everything else.
-
-That’s the part I found most interesting — not the total revenue itself, but where it actually comes from.
+# Examining the Hidden Revenue Dependency Patterns in Retail Data
+
+## What I’m Curious About
+I am exploring 4 questions:
+- Is revenue concentrated in just a few regions?
+- Do a small amount of customers carry most of the business?
+- Are there signals of instability hidden in transaction patterns?
+- What happens if one major customer disappears?
+
+## Why This Matters to Me
+We are usually looking at patterns as warnings as psychologists but if we see behavior shifting in unconventional ways, that usually means something is shifting and in my opinion, it isn't very far off from what happens in businesses. 
+There is dependency if most of the revenue is originating from a small set of customers or locations across a business. If we lose one big client, that would mean huge change across an organization.
+
+## The Data
+I used an online retail dataset from kaggle for this project and it contains transaction info like product purchase details, quantities, customer IDs, country etc. I am treating the dataset as illustrative instead of definitive where it shows me snippets of real purchasing behavior across an organization. 
+
+## How I Approached the Analysis
+I am using Python and SQLite together in this project where I am simply loading, and aggregating the dataset and examining exactly how the revenue is spread globally across customers and time. 
+
+## Some of the things I explored:
+- How revenue is distributed globally across countries
+- which customers generate most income
+- the average order value vs purchasing frequency
+- examining the revenue flow over time monthly
+- dependency signals where small aspects in the dataset might drive a large portion of revenue.
+
+## What Stood Out
+Early on, some things became obvious like the absence of an even distribution of the revenue data where some countries dominating than others contributing a significant share of total income. 
+Additionally, a large portion of revenue was generated by only a small group of clients with some buying more frequently than others. People who made few purchases usually spent more money. 
+Examining monthly, I found that revenue wasn't steady as it kept rising and falling through time, signalling that income flow wasn't constant. 
+This led me to the fact that it was pointing to concentration which meant that if a business was depending heavily only on a few clients or places globally, it signified exposure and potential vulnerability in the structure. 
+
+## Limitations
+This project is heavily exploratory using the dataset I'm using which means: 
+- I can’t make causal claims at all
+- The behaviour across customers in this dataset is not reflective across other industies or companies.
+- There are missing values in some fields in the data
+- My goal is to treat this project as a practice in thinking systemically and linking connections across aspects in the dataset to derive conclusions.
+
+## Tools Used
+- Python (pandas, matplotlib)
+- SQLite (query-driven)
+- In Jupyter Notebook
+
+## What I Found:
+- The UK is a significant contributor of revenue compared to the rest of the countries.
+- I also noticed that there's a steep drop-off after a few top performing countries suggesting that the business isn't evenly distributed. 
+What that implies:
+If suddenly there is a drop in purchase in one major region, there could be serious consequences across total revenue that signifies that exposure is something to be considered here in addition to performance.
+- Also, I found that certain customers show extensively high transaction counts in the data signifying they bought frequently. This shows customer concentration.
+- In contrast, there are clients that buy not as much, but they place large value orders while purchasing.
+What that implies:
+Revenue is being generated by a core group of customers and it certainly isn't equal which signifies dependency as leaving of even a few customers could lead to high negative impact in the business.
+- Another thing to consider was that of the frequency of buying and the spending behavior. A few top buying customers bought in volume that generated revenue compared to others who placed high-value orders in spite of placing fewer orders. So there were two different types of customer relationships to take into consideration. 
+What that implies:
+It is clear that loyalty and purchasing power are showing up in dofferent ways here, for example, a particular client might be consistent while another might be inconsistent but make big purchases. The idea is that losing either of these types of customers would negatively impact the business but in different ways.
+- I observed an inequality in revenue as a small segment is responsible for a large portion of financial activity which is often seen in real-world businesses. 
+What that implies:
+The stability is an illusion in this business as structurlly, it's only leaning on a small amount of strong standing pillars.
+- I also examined the time-based trend in the dataset where there are clear peaks and dips across the year showing fluctuations. 
+What that implies:
+Revenue flow appears to be seasonal and also driven by events across the year like the holidays.
+- After I cleaned the data where I attempted to remove the negative quantities, all return signals became zero and disappeared from the analysis which was unexpected. 
+- This might suggest that either the returns were filtered out during the data cleaning process or they existed but they were quite limited in this particular version.
+What that implies:
+I found this part the most interesting despite this part of the analysis being the least informative becasue it allowed me to see how preprocessing these things can help shape wht can be easily detected.
+
+## Actual Numbers From the Analysis:
+- The UK alone generated ~9,025,222 in revenue, while the approximate total revenue across the dataset was ~10,666,684.
+That means the UK accounted for roughly 85% of total revenue in this dataset.
+- After the UK, there was a steep drop:
+Netherlands: ~285,446
+EIRE: ~283,454
+Germany: ~228,867
+France: ~209,715
+- No other country came remotely close to the UK’s contribution.
+- When I looked at top customers by total revenue: These are individual customers generating this much in revenue.
+Customer 14646 generated ~280,206
+Customer 18102 generated ~259,657
+Customer 17450 generated ~194,551
+Customer 14911 generated ~143,825
+- Looking at transaction counts: Certain customers generated impact through frequency.
+Customer 17841 placed 7,847 transactions
+Customer 14911 placed 5,675 transactions
+Customer 14096 placed 5,111 transactions
+- But others showed a different pattern: high-value, low-frequency behavior.
+Customer 12346 placed just 1 transaction, but that single transaction was worth ~77,184.
+Customer 16446 placed only 3 transactions, generating ~168,473 total revenue.
+- On the time-based analysis, monthly revenue showed visible volatility.
+- February dipped to roughly ~520,000.
+- Revenue climbed steadily from late summer.
+- November peaked around ~1.5 million.
+- December dropped sharply again afterward.
+- On returns: df[df['Quantity'] < 0].shape returned (0, 9)  
