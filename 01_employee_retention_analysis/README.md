@@ -43,12 +43,12 @@ This project began as an attempt to understand how workforce data can be used to
 ## What Should the Business Focus on Next?
 The analysis suggests that attrition is not random. It clusters around structural pressure points.
 Based on the findings, the organization should focus on:
-• Overtime management policies
+- Overtime management policies
  Overtime emerged as the strongest positive predictor of attrition in the logistic regression model. This indicates that workload intensity directly increases exit probability. The company should audit workload distribution and introduce capacity buffers in high-pressure roles.
-• Early-tenure employee support
+- Early-tenure employee support
  Attrition probability was highest in the first few years at the company. Structured onboarding programs and early mentorship initiatives may reduce early churn.
-• Satisfaction drivers over compensation alone
+- Satisfaction drivers over compensation alone
  Job satisfaction and environment satisfaction showed strong negative coefficients. This suggests engagement factors may be more protective than income alone. Investment in team culture and manager training could yield better retention outcomes than purely financial incentives.
-• High performer risk monitoring
+- High performer risk monitoring
  Even strong performers may exit under sustained pressure. Performance alone is not a retention guarantee. The organization should monitor burnout indicators among top contributors.
 Retention should not be reactive. It should be structural.
