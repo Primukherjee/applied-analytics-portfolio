@@ -1,252 +1,123 @@
-# Strategic Portfolio Fragility & Market Power Modeling in Multi-SKU E-Commerce
+# Strategic Portfolio Fragility and Market Power Modeling in Multi-SKU E-Commerce Data
 
 ## Executive Summary
-
-This project models structural revenue concentration in a multi-category e-commerce business using HHI and dynamic stress simulation. 
-
-Although baseline concentration appears low (HHI = 0.05), stress testing reveals nonlinear fragility, where category shocks increase concentration and expose structural dependency.
-
-The analysis demonstrates how surface diversification can mask systemic vulnerability.
+In this project, I am using a multi-category e-commerce business to model structural revenue concentration by incorporating HHI and a stress simulation. I found the baseline HHI to be low (0.05), but then after stress testing, I found that shocks in the categories leads to nonlinear fragility and an increase in concentration and exposes structural dependency. This project shows how exactly vulnerabilities can be easily masked by surface-level diversification. 
 
 ## What I’m Curious About
-
-In this project, I am exploring structural dependency inside a multi-category e-commerce business.
-
-I wanted to understand:
-
-- Is revenue structurally concentrated across product categories?
-- Are a few categories carrying most of the business?
-- Is portfolio diversification real, or is it an illusion?
-- What happens to total revenue and market concentration if one dominant category is shocked?
+I want to understand a few things:
+- Across product categories, is the revenue concentrated structurally? 
+- Is the business being carried by only a few categories?
+- Is portfolio diversification real?
+- If there is shock in one dominant category, what happens to total revenue and market concentration?
 - Does concentration increase under stress?
-
-This project shifts from customer dependency (Project 2) toward structural product-level fragility.
-
----
+In this project, there's a shift from customer dependency (Project 2) to fragility at the product-level.
 
 ## Why This Matters to Me
-
-In psychology, we often examine patterns of dependency — where systems appear stable but are structurally leaning on a small set of supports.
-
-Businesses are not very different.
-
-If revenue is driven disproportionately by one category, the system may appear diversified while actually being exposed.
-
-This project treats the product portfolio as a structural system and tests its resilience under simulated stress.
-
----
+The system as a whole might appear to be diversified when being exposed if revenue is is only driven by one category significantly. So this project is treating the product portfolio as purely structural and also testing resilience under stressful conditions. 
 
 ## The Data
-
-I used the Brazilian Olist e-commerce dataset from Kaggle, specifically:
-
+In this project, I am using the Brazilian Olist e-commerce dataset from Kaggle but only these specific datasets:
 - olist_orders_dataset
 - olist_order_items_dataset
 - olist_products_dataset
 - product_category_name_translation
-
-The dataset includes:
-
+These datasets include:
 - Product IDs
-- Category mappings
+- Category details
 - Order timestamps
 - Revenue per order item
 - Unit pricing
 - Seller information
-
-The analysis is illustrative rather than definitive, focusing on structural revenue patterns rather than causal claims.
-
----
+Also, this analysis is purely illustrative and should not be used to generate causal claims.
 
 ## How I Approached the Analysis
-
-I built the entire project in Power BI using DAX-based modeling.
-
-The analysis is divided into three structural layers:
-
+I am approaching this project using Power BI and using DAX-based modeling. I divided the analysis into three layers: 
 1. Market & Revenue Structure  
 2. Cannibalization Diagnostics  
 3. Strategic Stress Simulation  
 
----
-
 # Page 1: Market & Revenue Structure
 
-This section establishes the structural baseline.
-
 ### Revenue Distribution by Category
-
-The largest category:
-
+In this section, the largest category found was:
 - health_beauty generated approximately 1.44M in revenue.
-
-There is a clear steep drop-off after the top categories, showing uneven distribution across product categories.
-
-This immediately suggests concentration rather than diversification.
-
----
+I also observed that there was a steep drop-off after top categories that shows that there is uneven distribution across the product categories. This suggests that there is concentration instead of diversification. 
 
 ### Herfindahl–Hirschman Index (HHI)
-
-HHI = 0.05
-
-In economic terms:
-
-- Below 0.15 → unconcentrated
-- 0.15–0.25 → moderate concentration
-- Above 0.25 → high concentration
-
-At 0.05, the portfolio appears diversified at a high-level category view.
-
-However, this is only the surface layer.
+The HHI was found to be = 0.05 which economically would mean:
+- Below 0.15 is unconcentrated
+- 0.15–0.25 is moderately concentrated
+- Above 0.25 is highly concentrated
+The portfolio appears to be diversified at a high level category view since HHI is so small. Again, this is only surface layer.
 
 ## Mathematical Formulation of HHI
-HHI = Σ (Revenue Share_i²) 
+I used this calculation: HHI = Σ (Revenue Share_i²) 
 
 ### Revenue & Units Growth
-
-Year-over-Year Metrics:
-
+Year-over-Year Metrics show in the analysis:
 - Revenue YoY Growth ≈ 1.22
 - Units YoY Growth ≈ 1.21
 - Price YoY ≈ 0.00
-
-This suggests growth is volume-driven rather than pricing-driven.
-
----
+This all suggested that growth is not price-driven but actually volume driven. 
 
 ### SKU-Level Concentration
-
-Top individual SKUs contribute approximately:
-
+In this part of the analysis, contributions made by top individual Stock keeping units were: 
 - 0.43%
 - 0.38%
 - 0.37%
-
-This indicates that while category-level concentration is low, SKU-level fragmentation is high.
-
----
+This suggest that even though concentration across the category level is low, fragmentation at the SKU level is high.
 
 ### Portfolio Fragility Index
-
-Portfolio Fragility Index = 0.30
-
-This metric reflects sensitivity of total revenue to top contributor segments.
-
-Even if high-level HHI appears low, fragility can still exist when dominance emerges inside subsets.
-
----
+I found the portfolio Fragility Index to be 0.30. This means that total revene is sensitive and influenced by top contributors. So this means that even though HHI is appearing to be considerably low, fragility can still exist in the system as soon as there is emergence of dominance.
 
 # Page 2: Cannibalization Diagnostics
-
-Here, I examined whether categories are shifting share over time.
+In this page of the analysis, I examined if there is shift in the categories over a timely manner. 
 
 ### Category Share Trends
-
-Top 5 categories show:
-
-- Share shifts between 2016 → 2017 → 2018
-- Certain categories gained share while others declined
-
-Most share changes were small (±0.01), suggesting relative stability at category level.
-
-However, small shifts in dominant categories can still produce meaningful structural changes.
-
----
+In this, the top 5 categories show that: 
+- Share shifts between 2016 to 2017 to 2018.
+- Certain categories gained share while others declined.
+Majority share changes were small (±0.01) that suggests that at the category-level, there is relative stability. But in spitie of this, structural changes can still occur if there are small shifts in the dominant categories. 
 
 # Page 3: Strategic Stress Simulation
-
-This is the core modeling section.
-
-I simulated a revenue shock applied to the largest category (health_beauty).
-
-Using a dynamic slider parameter (Category Shock %), I applied stress from 0% to 50%.
-
----
+This section is the main place where I incorporated modeling, where I applied a simulated shock (revenue) to the largest category that was health_beauty. I used a slider parameter (Category Shock %), where I also applied stress from 0% to 50%.
 
 ## Baseline Revenue
-
-Base Revenue ≈ 16M
-
----
+The baseline revenue came out to be as 16M. 
 
 ## Stressed Revenue
-
 At 50% shock:
-
 Stressed Revenue ≈ 15.12M
-
 Revenue Impact ≈ -5%
-
-Even removing half the revenue from the largest category reduces total revenue by 5%.
-
----
+This means that total revenue would reduce by 5% if even half of the revenue was removed from the largest category.
 
 ## HHI Under Stress
+Since Baseline HHI = 0.05 and at 50% shock: HHI = 0.12, there is an increase in concentration by +0.07. So we see that concentration increased when dominant category was weakened whereas for other categories, dependency increases when relative share is absorbed by the rest of the categories. 
 
-Baseline HHI = 0.05
-
-At 50% shock:
-HHI = 0.12
-
-Concentration Increase = +0.07
-
-When the dominant category weakens, concentration increases.
-
-Other categories absorb relative share, increasing structural dependency.
-
----
-
-## Structural Interpretation
-
-From 0% to 30% shock:
-
-HHI remains relatively stable.
-
-After ~30% shock:
-
-HHI increases more rapidly.
-
-This suggests nonlinear fragility.
-
-The system appears stable until stress crosses a threshold.
-
----
+## Interpretation
+From 0% to 30% shock: HHI remains relatively stable but after ~30% shock: HHI increases more rapidly suggesting nonlinear fragility. 
 
 ## Limitations
-
-- The dataset is observational and illustrative.
-- No causal inference.
-- Category-level aggregation may hide SKU-level dependencies.
-- Time range limited to available years.
-
----
+- The dataset is illustrative and observational.
+- No causal claims can be made.
+- SKU-level dependencies might be hid by category-level aggregations.
+- Time range is only limited to the years that are available.
 
 ## Tools Used
-
-- Power BI
-- DAX (dynamic measures & simulation)
+- Power BI and DAX (dynamic measures & simulation)
 - Parameter-driven stress modeling
 - HHI computation
-- Share-based concentration metrics
-
----
 
 ## Overall Interpretation
+In conclusion, fragility might still exist under stressful conditions in spite of concentration metrics might be to the lower side. So this leads me to say that in businesses, stability is not always absolute but can be conditional and what matters more than surface level diversification is portfolio structure. 
 
-Even when concentration metrics appear low, fragility can exist under stress.
+## What Businesses Should Focus On Based on This:
+- The business should monitor HHI under stressful conditions under simulations.
+- It should also track share shifts across top categories on a quarterly basis.
+- It shoudl build diversification across more mid-tier categories.
+- The business should stress-test portfolio concentration routinely.
 
-Stability in business systems is often conditional — not absolute.
-
-Portfolio structure matters more than surface diversification.
-
----
-
-## What Businesses Should Focus On
-
-- Monitor HHI under simulated stress, not just static HHI
-- Track share shifts across top categories quarterly
-- Build diversification across mid-tier categories
-- Identify nonlinear thresholds where fragility accelerates
-- Stress-test portfolio concentration routinely
-
+## Dashboard Preview
+- Market Structure (screenshots/page1_structure.png)
+- Cannibalization Diagnostics (screenshots/page2_cannibalization.png)
+- Strategic Stress Simulation (screenshots/page3_stress_simulation.png)
