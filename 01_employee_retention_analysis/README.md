@@ -39,3 +39,16 @@ That means:
 - Missing the real organizational context where such things happen
 ## Analysis and Findings
 This project began as an attempt to understand how workforce data can be used to identify patterns behind employee turnover and translate those patterns into actionable insights. For this project, I worked with an employee attrition dataset to explore how different workplace factors might influence the likelihood of employees leaving an organization. I started by examining overall attrition rates and then explored how turnover varied across departments, overtime status, performance ratings, and tenure length. As the analysis progressed, I built visualizations to better understand how attrition probability shifted across groups. I found that employees working overtime had a significantly higher likelihood of leaving, and that the first few years at a company showed the highest turnover risk. I also compared whether high performers were still at risk under high workload conditions. To move beyond descriptive analysis, I built a logistic regression model to predict attrition using features such as age, income, job satisfaction, tenure, overtime status, work–life balance, and environment satisfaction. The model helped identify which variables had the strongest relationship with the likelihood of an employee leaving. Overtime emerged as the strongest positive predictor, while job satisfaction, environment satisfaction, and work–life balance were strong negative predictors, suggesting protective effects against turnover.
+
+## What Should the Business Focus on Next?
+The analysis suggests that attrition is not random. It clusters around structural pressure points.
+Based on the findings, the organization should focus on:
+• Overtime management policies
+ Overtime emerged as the strongest positive predictor of attrition in the logistic regression model. This indicates that workload intensity directly increases exit probability. The company should audit workload distribution and introduce capacity buffers in high-pressure roles.
+• Early-tenure employee support
+ Attrition probability was highest in the first few years at the company. Structured onboarding programs and early mentorship initiatives may reduce early churn.
+• Satisfaction drivers over compensation alone
+ Job satisfaction and environment satisfaction showed strong negative coefficients. This suggests engagement factors may be more protective than income alone. Investment in team culture and manager training could yield better retention outcomes than purely financial incentives.
+• High performer risk monitoring
+ Even strong performers may exit under sustained pressure. Performance alone is not a retention guarantee. The organization should monitor burnout indicators among top contributors.
+Retention should not be reactive. It should be structural.
