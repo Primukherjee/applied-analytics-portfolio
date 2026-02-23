@@ -1,6 +1,6 @@
 # applied-analytics-projects
 
-This is a collection of applied workforce and business analytics projects exploring employee behavior, revenue concentration, and structural vulnerability using real-world datasets.
+This is a collection of applied workforce and business analytics projects exploring employee behavior, revenue concentration, and systemic vulnerabilities using real-world datasets.
 
 ## Projects
 - **01_employee_retention_analysis**
